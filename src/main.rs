@@ -179,6 +179,14 @@ impl HoseiChecker {
     }
 }
 
+impl std::fmt::Debug for HoseiChecker {
+    #[inline]
+    fn fmt(&self, _: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        self.print();
+        Ok(())
+    }
+}
+
 fn main() {
 
     // load and set
@@ -186,5 +194,6 @@ fn main() {
     println!("INPUTS: {:#?}", hc.target);
 
     // print result
-    hc.print();
+    // hc.print();
+    println!("RESULT:\n{:?}", hc);
 }
